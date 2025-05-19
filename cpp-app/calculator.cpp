@@ -1,12 +1,10 @@
 #include <iostream>
 using namespace std;
-
 int main() {
     int a = 20, b = 10;
     char op = '+';
     int result;
-
-    switch(op) {
+switch(op) {
         case '+':
             result = a + b;
             cout << a << " + " << b << " = " << result << endl;

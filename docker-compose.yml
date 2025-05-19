@@ -1,0 +1,24 @@
+#version: '3.9'
+
+#services:
+  #python-service:
+    #build:
+    #  context: ./python-app
+   # container_name: my-python-container
+
+  #java-service:
+   # build:
+  #    context: ./java-app
+#  container_name: my-java-container
+services:
+  python-service:
+    build: ./python-app
+    container_name: python-service1
+    ports:
+      - "5000:5000"
+
+  java-service:
+    build: ./java-app
+    container_name: java-service1
+    depends_on:
+      - python-service

@@ -1,5 +1,3 @@
-
-
 FROM gcc:latest
 WORKDIR /app
 COPY factorial.c .

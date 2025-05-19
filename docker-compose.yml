@@ -1,24 +1,25 @@
-#version: '3.9'
-
-#services:
-  #python-service:
-    #build:
-    #  context: ./python-app
-   # container_name: my-python-container
-
-  #java-service:
-   # build:
-  #    context: ./java-app
-#  container_name: my-java-container
+version: '3'
 services:
   python-service:
-    build: ./python-app
-    container_name: python-service1
-    ports:
-      - "5000:5000"
+    build:
+      context: ./python-app
+      dockerfile: Dockerfile
+    container_name: my-python-container
 
   java-service:
-    build: ./java-app
-    container_name: java-service1
-    depends_on:
-      - python-service
+    build:
+      context: ./java-app
+      dockerfile: Dockerfile
+    container_name: my-java-container
+
+  c-service:
+    build:
+      context: ./c-app
+      dockerfile: Dockerfile.c
+    container_name: my-c-container
+
+  cpp-service:
+    build:
+      context: ./cpp-app
+      dockerfile: Dockerfile.cpp
+    container_name: my-cpp-container
